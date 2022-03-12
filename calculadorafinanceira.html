@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Financeira</title>
+  </head>
+  <body>
+    <span>
+      Quantidade de Hectares: <input id="input_quantidade_hectares" /><br />
+      Quantidade da Colheita: <input id="input_quantidade_da_colheita" /><br />
+      Preço da Saca: <input id="input_preço_saca" /><br />
+      Preço do Kg: <input id="input_preço_kg" /><br />
+    </span>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div id="frase_01"></div>
+    <div id="frase_02"></div>
+    <div id="frase_03"></div>
+  </body>
+</html>
+
+<script>
+  function calcular() {
+    // Informaçõres fornecidas pelo usuário
+    var quantidade_hectares = Number(input_quantidade_hectares.value);
+    var preço_saca = Number(input_preço_saca.value);
+    var preço_kg = Number(input_preço_kg.value);
+    var quantidade_da_colheita = Number(input_quantidade_da_colheita);
+
+    //calculo de quantidade de árvores
+
+    var quantidade_arvores_cacau = 1100 * quantidade_hectares;
+
+    //calculado da quantidade de produção em kilos
+
+    var quantidade_kg_cacau = 1500 * quantidade_hectares;
+
+    //quantidade de kilos de cacau
+
+    var lucro_em_kg = quantidade_kg_cacau * preço_kg;
+
+    // lucro em kilos
+    frase_01.innerHTML += `Lucro total em Kilos: ${lucro_em_kg}`;
+    frase_02.innerHTML += `quantidade_kg_cacau: ${quantidade_kg_cacau}`;
+    frase_03.innerHTML += `quantidade_arvores_cacau: ${quantidade_arvores_cacau}`;
+  }
+</script>
